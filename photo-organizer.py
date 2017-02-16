@@ -4,7 +4,6 @@ import os.path
 import shutil
 import hashlib
 import exifread
-from dateutil.parser import parse
 from datetime import datetime
 
 
@@ -48,7 +47,6 @@ def get_file_date(path):
 			return datetime.strptime(dt_str, DATETIME_EXIF_TAG_FORMAT)
 		except ValueError as e:
 			return None
-		#return parse(dt_str)
 	else:
 		ts = os.stat(path).st_mtime
 		return datetime.fromtimestamp(ts)
