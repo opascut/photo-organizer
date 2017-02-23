@@ -79,9 +79,6 @@ if __name__ == "__main__":
 		exit(0)	
 
 	for f in get_files(src):
-		# print(f)
-		# if f == r"d:\temp\src\craciun miami 2005\28 dec 2\PIC_0001.JPG":
-		# 	import pdb;pdb.set_trace()
 		_, ext = os.path.splitext(f)
 		ext = ext.lower()
 		if ext not in FILE_TYPES_TO_PROCESS:
@@ -100,12 +97,6 @@ if __name__ == "__main__":
 		if not d:
 			print("skipping {0}, no date found".format(f))
 			continue
-		# dest_folder = os.path.join(dest, 
-		# 							"-".join((str(d.year), 
-		# 										"{0:02}".format(d.month), 
-		# 										"{0:02}".format(d.day)
-		# 									))
-		# 							)
 		dest_folder = os.path.join(dest, 
 									str(d.year), 
 									"{0:02}".format(d.month), 
